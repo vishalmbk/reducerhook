@@ -1,5 +1,6 @@
-import React, { useReducer } from 'react';
+import React, { useState, useReducer } from 'react';
 import './App.css';
+import ToDos from './ToDos';
 
 
 const ACTIONS = {
@@ -22,18 +23,18 @@ const reducer = (state, action) => {
   }
 }
 function App() {
-  // const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
   const [state, dispatch] = useReducer(reducer, { count: 0 })
 
 
   const increment = () => {
-    // setCount(crr => crr + 1)
+    setCount(crr => crr + 1)
     dispatch({ type: ACTIONS.INCREMENT })
   }
 
   const decrement = () => {
-    // setCount(crr => crr - 1)
+    setCount(crr => crr - 1)
     dispatch({ type: ACTIONS.DECREMENT })
   }
   return (
@@ -42,6 +43,7 @@ function App() {
       <button onClick={decrement}> - </button>
       <h3>{state.count}</h3>
       <button onClick={increment}> + </button>
+      <ToDos />
     </div>
   );
 }

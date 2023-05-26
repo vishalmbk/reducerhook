@@ -1,15 +1,15 @@
 import { ACTIONS } from "./Actions";
-import ToDos from "./ToDos";
 
 
-export const Reducer = (state, actions) => {
+
+export const reducer = (state, action) => {
     switch (action.type) {
         case ACTIONS.ADD_TODO:
-            return [...ToDos, newTodo(name)]
-            break;
+            return [...state, newTodo(action.payload.name)]
+
 
         default:
-            break;
+            return state;
     }
 
 }
