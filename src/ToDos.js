@@ -15,7 +15,7 @@ const ToDos = () => {
         dispatch({ type: ACTIONS.ADD_TODO, payload: { name: name } })
         setName('')
     }
-    console.log(todos)
+    // console.log(todos)
     return (
         <>
             <form onSubmit={handleSubmit}>
