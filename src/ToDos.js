@@ -15,14 +15,14 @@ const ToDos = () => {
         dispatch({ type: ACTIONS.ADD_TODO, payload: { name: name } })
         setName('')
     }
-    console.log(todos)
+    // console.log(todos)
     return (
         <>
             <form onSubmit={handleSubmit}>
                 <input type='text' value={name} onChange={e => setName(e.target.value)} />
             </form>
             {todos.map(todo => {
-                return <ToDoList key={todo.id} todo={todo} />
+                return <ToDoList key={todo.id} todo={todo} dispatch={dispatch} />
             })
             }
         </>
